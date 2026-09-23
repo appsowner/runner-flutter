@@ -23,9 +23,9 @@ void main() {
     expect(container.read(contadorProvider), 2);
   });
 
-  test('decrementar desde 0 da -1', () {
+  test('decrementar desde 0 se queda en 0', () {
     container.read(contadorProvider.notifier).decrementar();
-    expect(container.read(contadorProvider), -1);
+    expect(container.read(contadorProvider), 0);
   });
 
   test('incrementar y luego decrementar vuelve a 0', () {
