@@ -7,7 +7,10 @@ class ContadorNotifier extends Notifier<int> {
 
   void incrementar() => state++;
 
-  void decrementar() => state--;
+  /// Resta 1 al contador. El contador nunca baja de 0: en 0 no hace nada.
+  void decrementar() {
+    if (state > 0) state--;
+  }
 }
 
 final contadorProvider = NotifierProvider<ContadorNotifier, int>(
