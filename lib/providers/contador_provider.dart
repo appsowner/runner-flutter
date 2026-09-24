@@ -11,6 +11,9 @@ class ContadorNotifier extends Notifier<int> {
   void decrementar() {
     if (state > 0) state--;
   }
+
+  /// Duplica el valor actual del contador.
+  void multiplicarPorDos() => state = state * 2;
 }
 
 final contadorProvider = NotifierProvider<ContadorNotifier, int>(

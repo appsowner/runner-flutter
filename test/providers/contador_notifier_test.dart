@@ -73,5 +73,20 @@ void main() {
 
       expect(cambios, isEmpty);
     });
+
+    test('multiplicarPorDos dos veces desde 1 da 4', () {
+      notifier.incrementar();
+      expect(estado(), 1);
+
+      notifier
+        ..multiplicarPorDos()
+        ..multiplicarPorDos();
+      expect(estado(), 4);
+    });
+
+    test('multiplicarPorDos en 0 se queda en 0', () {
+      notifier.multiplicarPorDos();
+      expect(estado(), 0);
+    });
   });
 }
